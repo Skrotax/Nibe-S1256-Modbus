@@ -1,0 +1,18 @@
+alias: Nibe - Min Framledning till Modbus
+description: Skriver min framledning från input till register 34
+trigger:
+  - platform: state
+    entity_id: input_number.min_framledning
+condition:
+  - condition: template
+    value_template: >
+      {{ trigger.to_state.context.user_id is not none or 
+         trigger.to_state.context.parent_id is not none }}
+action:
+  - service: modbus.write_register
+    data:
+      hub: Nibe
+      slave: 1
+      address: 34
+      value: "{{ (states('input_number.min_framledning') | float * 10) | int }}"
+mode: single

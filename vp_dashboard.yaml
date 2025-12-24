@@ -1,0 +1,214 @@
+type: sections
+cards: []
+title: VP Nibe S1256
+badges: []
+sections:
+  - type: grid
+    cards:
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.s1256_momentan_effekt
+            name: VP effekt
+          - entity: sensor.s1256_rumstemperatur_1_1
+            name: Inomhustemp (BT50)
+          - entity: sensor.s1256_utetemperatur_bt1
+            name: Utomhustemp (BT1)
+          - entity: sensor.s1256_beraknad_framledning
+            name: Börvärde framledning
+          - entity: binary_sensor.s1256_qn10
+            name: VV produktion
+          - entity: sensor.s1256_driftlage_intern_tillsats
+            name: Status tillsatsvärme
+          - entity: sensor.s1256_alarmnummer
+            name: Larm
+            icon: mdi:alarm-light
+        grid_options:
+          columns: 24
+          rows: auto
+        columns: 7
+      - type: heading
+        heading_style: title
+        badges: []
+        grid_options:
+          columns: 3
+          rows: 1
+      - type: heading
+        heading: Nibe S1256-13
+        heading_style: title
+        badges: []
+        grid_options:
+          columns: 15
+          rows: 1
+      - type: heading
+        heading_style: title
+        badges: []
+        grid_options:
+          columns: 6
+          rows: 1
+      - type: heading
+        heading_style: title
+        badges: []
+        grid_options:
+          columns: 3
+          rows: 1
+      - type: picture-elements
+        elements:
+          - type: state-label
+            entity: binary_sensor.vp_komp
+            style:
+              left: 51%
+              top: 93.5%
+              color: black
+              font-weight: bold
+          - type: state-label
+            entity: sensor.s1256_kompressorfrekvens
+            style:
+              left: 52%
+              top: 98.5%
+              color: black
+          - type: state-badge
+            entity: sensor.s1256_koldbarare_in_bt10
+            style:
+              left: 90.5%
+              top: 8%
+              color: black
+              "--ha-label-badge-size": 40px
+          - type: state-badge
+            entity: sensor.s1256_koldbarare_ut_bt11
+            style:
+              left: 76.25%
+              top: 8%
+              color: black
+              "--ha-label-badge-size": 40px
+          - type: state-label
+            entity: sensor.s1256_effekt_intern_tillsats
+            style:
+              left: 2%
+              top: 47%
+              color: black
+              transform: rotate(270deg)
+          - type: state-label
+            entity: sensor.s1256_koldbararpump_gp2
+            style:
+              left: 90.5%
+              top: 46.5%
+              color: black
+          - type: state-badge
+            entity: sensor.s1256_framledning_bt2
+            style:
+              left: 12.25%
+              top: 8%
+              color: black
+              "--ha-label-badge-size": 40px
+          - type: state-badge
+            entity: sensor.s1256_returledning_bt3
+            style:
+              left: 26.5%
+              top: 8%
+              color: black
+              "--ha-label-badge-size": 40px
+          - type: state-badge
+            entity: sensor.s1256_vv_topp_bt7
+            style:
+              left: 44.5%
+              top: 8%
+              color: black
+              "--ha-label-badge-size": 40px
+          - type: state-label
+            entity: sensor.s1256_varmebararpump_gp1
+            style:
+              left: 26.5%
+              top: 46.5%
+              color: black
+          - type: state-label
+            entity: sensor.s1256_flodesgivare_bf1
+            style:
+              left: 21%
+              top: 68%
+              color: black
+              font-size: 11px
+          - type: state-label
+            entity: sensor.s1256_suggas_bt17
+            prefix: "BT17 "
+            style:
+              left: 82%
+              top: 92%
+              color: black
+              font-size: 11px
+          - type: state-label
+            entity: sensor.s1256_vatskeledning_bt15
+            prefix: "BT15 "
+            style:
+              left: 39%
+              top: 79.5%
+              color: black
+              font-size: 11px
+          - type: state-label
+            entity: sensor.s1256_kondensor_bt12
+            prefix: "BT12 "
+            style:
+              left: 21.2%
+              top: 79.50%
+              color: black
+              font-size: 11px
+          - type: state-label
+            entity: sensor.s1256_hetgas_bt14
+            style:
+              left: 21%
+              top: 92%
+              color: black
+              font-size: 11px
+            prefix: "BT14 "
+          - type: state-label
+            entity: sensor.s1256_vv_laddning_bt6
+            prefix: "BT6 "
+            style:
+              left: 50%
+              top: 58%
+              color: black
+              font-size: 11px
+          - type: state-label
+            style:
+              left: 83%
+              top: 68.0%
+              color: black
+              font-size: 11px
+            entity: sensor.s1256_forangare_bt84
+        grid_options:
+          columns: 18
+          rows: auto
+        image: /local/vp_v2_mg.png
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.s1256_varmekurva
+            name: Värmekurva
+          - entity: input_number.varmekurva
+            name: Värmekurva +/-
+          - entity: sensor.s1256_varmeforskjutning
+            name: Förskjutning
+          - entity: input_number.varmeforskjutning
+            name: Förskjutning +/-
+          - entity: sensor.s1256_kompressor_begransning
+            name: Kompressor begränsning
+          - entity: sensor.s1256_lagtryck_bp8
+            name: BP8 Lågtryck
+          - entity: sensor.s1256_hogtryck_bp9
+            name: BP9 Högtryck
+        columns: 7
+        grid_options:
+          columns: 24
+          rows: auto
+        card_mod:
+          style: |
+            ha-card {
+              --ha-card-background: #7e7e7e;
+              color: #1f1f1f;
+            }
+    column_span: 2
+max_columns: 4
