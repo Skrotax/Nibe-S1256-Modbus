@@ -15,5 +15,7 @@ Made 4x input numbers from UI, see input.numbers.txt
 Corresponding automations also as .txt files and can be directly pasted into the UI yaml editor.
 
 My heat pump dashboard.yaml and .png file also attached. (picture element)
-Hope ite helps someone
+
+Hope it helps someone
+
 br. /JR
