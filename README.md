@@ -1,4 +1,6 @@
 Just how i set up my Nibe S1256 heatpump.
+https://github.com/Skrotax/Nibe-S1256-Modbus/blob/main/dashb_VP_show.png
+
 
 Check https://github.com/elupus/esphome-nibe 
 and 
