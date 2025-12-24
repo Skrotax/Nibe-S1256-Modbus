@@ -1,0 +1,403 @@
+modbus:
+  - name: Nibe
+    type: tcp
+    host: !secret nibe_modbus_host_ip
+    port: !secret nibe_modbus_port
+    delay: 5
+    timeout: 10
+
+    sensors:
+      # TEMPERATURSENSORER
+      - name: S1256 Utetemperatur BT1
+        unique_id: s1256_bt1
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 1
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 60
+        slave: 1
+
+      - name: S1256 Framledning BT2
+        unique_id: s1256_bt2
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 5
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Returledning BT3
+        unique_id: s1256_bt3
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 7
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 VV Topp BT7
+        unique_id: s1256_bt7
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 8
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 60
+        slave: 1
+
+      - name: S1256 VV Laddning BT6
+        unique_id: s1256_bt6
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 9
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 60
+        slave: 1
+
+      - name: S1256 Köldbärare In BT10
+        unique_id: s1256_bt10
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 10
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Köldbärare Ut BT11
+        unique_id: s1256_bt11
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 11
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Kondensor BT12
+        unique_id: s1256_bt12
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 12
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Hetgas BT14
+        unique_id: s1256_bt14
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 13
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Vätskeledning BT15
+        unique_id: s1256_bt15
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 14
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Suggas BT17
+        unique_id: s1256_bt17
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 16
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Rumstemperatur 1-1
+        unique_id: s1256_roomsensor_1_1
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 26
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 120
+        slave: 1
+
+      - name: S1256 Rumsmedeltemperatur BT50
+        unique_id: s1256_bt50
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 116
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 120
+        slave: 1
+
+      - name: S1256 Beräknad Framledning
+        unique_id: s1256_calculated_supply
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 1017
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 60
+        slave: 1
+
+      - name: S1256 Förångare BT84
+        unique_id: s1256_bt84
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 2129
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      # TRYCK
+      - name: S1256 Lågtryck BP8
+        unique_id: s1256_bp8
+        unit_of_measurement: bar
+        data_type: int16
+        device_class: pressure
+        address: 2308
+        input_type: input
+        scale: 0.01
+        precision: 1
+        state_class: measurement
+        slave: 1
+
+      - name: S1256 Högtryck BP9
+        unique_id: s1256_bp9
+        unit_of_measurement: bar
+        data_type: int16
+        device_class: pressure
+        address: 2132
+        input_type: input
+        scale: 0.01
+        precision: 1
+        state_class: measurement
+        slave: 1
+
+      # FLÖDE OCH PUMPAR
+      - name: S1256 Flödesgivare BF1
+        unique_id: s1256_bf1
+        unit_of_measurement: l/m
+        data_type: int16
+        address: 40
+        input_type: input
+        scale: 0.1
+        precision: 1
+        state_class: measurement
+        scan_interval: 60
+        slave: 1
+
+      - name: S1256 Värmebärarpump GP1
+        unique_id: s1256_gp1
+        unit_of_measurement: "%"
+        data_type: int16
+        address: 1102
+        input_type: input
+        scale: 1
+        precision: 0
+        state_class: measurement
+        scan_interval: 60
+        slave: 1
+
+      - name: S1256 Köldbärarpump GP2
+        unique_id: s1256_gp2
+        unit_of_measurement: "%"
+        data_type: int16
+        address: 1104
+        input_type: input
+        scale: 1
+        precision: 0
+        state_class: measurement
+        scan_interval: 60
+        slave: 1
+
+      # KOMPRESSOR
+      - name: S1256 Kompressorfrekvens
+        unique_id: s1256_compressor_freq
+        unit_of_measurement: Hz
+        data_type: int16
+        address: 140
+        input_type: input
+        scale: 1
+        precision: 0
+        state_class: measurement
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Kompressor begränsning
+        unique_id: s1256_kompressor_limit
+        data_type: int16
+        address: 2021
+        input_type: input
+        scale: 1
+        precision: 0
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 Kompressorstatus
+        unique_id: s1256_kompressor_status
+        data_type: int16
+        address: 1100
+        input_type: input
+        slave: 1
+
+      # EFFEKT OCH DRIFT
+      - name: S1256 Effekt Intern Tillsats
+        unique_id: s1256_internal_add_power
+        unit_of_measurement: kW
+        data_type: int16
+        device_class: power
+        address: 1027
+        input_type: input
+        scale: 0.01
+        precision: 2
+        state_class: measurement
+        scan_interval: 60
+        slave: 1
+
+      - name: S1256 Driftläge Intern Tillsats
+        unique_id: s1256_internal_add_mode
+        data_type: int16
+        address: 1029
+        input_type: input
+        scale: 1
+        precision: 0
+        scan_interval: 120
+        slave: 1
+
+      - name: S1256 Momentan effekt
+        unique_id: s1256_used_power
+        data_type: int16
+        address: 2166
+        input_type: input
+        scale: 1
+        precision: 1
+        scan_interval: 41
+        slave: 1
+
+      # VENTILER OCH LARM
+      - name: S1256 Alarmnummer
+        unique_id: s1256_alarm
+        data_type: int16
+        address: 1976
+        input_type: input
+        scale: 1
+        precision: 0
+        scan_interval: 30
+        slave: 1
+
+      - name: S1256 VV Ventil
+        unique_id: s1256_QN10
+        data_type: int16
+        address: 2196
+        input_type: input
+        slave: 1
+
+      # INSTÄLLNINGAR (HOLDING REGISTERS)
+      - name: S1256 Gradminuter
+        unique_id: s1256_degree_minutes
+        unit_of_measurement: GM
+        data_type: int16
+        address: 11
+        input_type: holding
+        scale: 0.1
+        precision: 0
+        state_class: measurement
+        scan_interval: 300
+        slave: 1
+
+      - name: S1256 Min Framledning
+        unique_id: s1256_min_supply
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 34
+        input_type: holding
+        scale: 0.1
+        precision: 1
+        scan_interval: 300
+        slave: 1
+
+      - name: S1256 Max Framledning
+        unique_id: s1256_max_supply
+        unit_of_measurement: °C
+        data_type: int16
+        device_class: temperature
+        address: 38
+        input_type: holding
+        scale: 0.1
+        precision: 1
+        scan_interval: 300
+        slave: 1
+
+      - name: S1256 Värmekurva
+        unique_id: s1256_kurva
+        data_type: int16
+        address: 26
+        input_type: holding
+        scale: 1
+        precision: 0
+        slave: 1
+
+      - name: S1256 Värmeförskjutning
+        unique_id: s1256_kurva_offset
+        data_type: int16
+        address: 30
+        input_type: holding
+        scale: 1
+        precision: 0
+        slave: 1
