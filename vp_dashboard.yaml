@@ -204,11 +204,7 @@ sections:
         grid_options:
           columns: 24
           rows: auto
-        card_mod:
-          style: |
-            ha-card {
-              --ha-card-background: #7e7e7e;
-              color: #1f1f1f;
-            }
+
     column_span: 2
+
 max_columns: 4
